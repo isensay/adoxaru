@@ -1,0 +1,162 @@
+# Глобальное
+app_author: "Petr Minkin"
+
+# Авторизация
+login:
+  title: "Log In"
+  text:  "Enter your email address and password to access system"
+  error: "Invalid credentials"
+  email: "Email"
+  password: "Password"
+  remember_me: "Remember me"
+  btn:
+    login: "Log In"
+
+# Боковое (левое) меню
+left_menu:
+  btn:
+    home:         "Home"
+    screenshots:  "Screenshots"
+    system_pages:
+      parent:       "System pages"
+      maintenance:  "Maintenance"
+      comming_soon: "Cooming soon"
+      errors:       "Errors"
+      prefix_error: "Error"
+
+# Верхнее меню
+topbar:
+  btn:
+    set_color:  "Change color"
+    fullscreen: "Fullscreen"
+    set_locale:
+      parent: "Change language"
+      ru:     "Russian"
+      en:     "English"
+    notify:
+      parent: "Notifications"
+      popup:
+        title:   "Notifications"
+        btn_all: "View all notifications"
+    profile: "Profile"
+    setting: "Settings"
+    logout:  "Logout"
+
+# Настройки оформления
+system_scheme:
+  title:            "Theme Settings"
+  reset_to_default: "Reset to Default"
+  color_scheme:
+    title:      "Color Scheme"
+    light_mode: "Light Mode"
+    dark_mode:  "Dark Mode"
+  width:
+    title: "Width"
+    fluid: "Fluid"
+    boxed: "Boxed"
+  topbar:
+    title: "Topbar"
+    light: "Light"
+    dark:  "Dark"
+    brand: "Brand"
+  menu_positon:
+    title:      "Menus Positon<br /><small>(Leftsidebar and Topbar)</small>"
+    fixed:      "Fixed"
+    scrollable: "Scrollable"
+  menu_color:
+    title:    "Menu Color"
+    light:    "Light"
+    dark:     "Dark"
+    brand:    "Brand"
+    gradient: "Gradient"
+  left_sidebar_size:
+    title:     "Left Sidebar Size"
+    default:   "Default"
+    compact:   "Compact <small>(Small size)</small>"
+    condensed: "Condensed <small>(Extra Small size)</small>"
+
+# Сервисные страницы >>>
+
+error_page:
+  401:
+    title:       "Unauthorized"
+    description: "Oops! Something went wrong. Don't worry...<br />Authorization is required to access this resource.<br />If you are already logged in, you may not have the necessary rights."
+  403:
+    title:       "Forbidden"
+    description: "It's looking like you may have taken a wrong turn. Don't worry... it happens to the best of us.<br />Access to this page is denied!<br />Try to go back to the main page"
+  404:
+    title:       "Page Not Found"
+    description: "It's looking like you may have taken a wrong turn. Don't worry... it happens to the best of us.<br />The page you requested may be unavailable or may have moved to a new address."
+  419:
+    title:       "Page expired"
+    description: "It's looking like you may have taken a wrong turn. Don't worry... it happens to the best of us.<br />The resource you are requesting may be out of date."
+  500:
+    title:       "Internal Server Error"
+    description: "Oops! Something went wrong. Don't worry...<br />We are already working on fixing the error.<br />Please try again later."
+  503:
+    head_title: "Service Temporarily Unavailable"
+    page_title: "We are currently performing maintenance"
+    page_text:  "We're making the system more awesome. We'll be back shortly."
+    descriptions:
+      left:
+        title: "Why is the site down?"
+        text:  "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration."
+      center:
+        title: "What is the downtime?"
+        text:  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical but the majority."
+      right:
+        title: "Do you need support?"
+        text:  "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embar"
+  btn_home: "Back to Home"
+  support:  "Support"
+
+comming_soon:
+    head_title: "Comming soon"
+    page_title: "Stay tunned, we're launching very soon"
+    page_text:  "We're making the system more awesome"
+
+# Сервисные страницы <<<
+
+# Footer
+footer:
+  make_in: "Created in"
+  author:  "Author"
+  btn:
+    about_us:   "About us"
+    help:       "Help"
+    contact_us: "Contct us"
+
+# Профиль
+profile:
+  page_title: "Profile"
+  about:
+    buttons:
+      follow:  "Follow"
+      message: "Message"
+    about_me: "About me"
+    full_name: "Full Name"
+    phone: "Mobile"
+    email: "Email"
+    location: "Location"
+  skills:
+    title: "Skills"
+    description: "Here are my main skills and my subjective assessment of these skills."
+  experience:
+    title: "Experience"
+    buttons:
+      about_me: "About Me"
+      settings: "Settings"
+  projects:
+    title: "Projects"
+    table_titles:
+      project_name: "Project Name"
+      start_date: "Start Date"
+      due_date: "Due Date"
+      status: "Status"
+      client: "Client"
+  project_status:
+    work_in_progress: "Work in Progress"
+    pending: "Pending"
+    done: "Done"
+    on_hold: "On Hold"
+    coming_soon: "Coming soon"

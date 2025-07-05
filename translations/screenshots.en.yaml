@@ -1,0 +1,29 @@
+# Основное
+base:
+  head_title:      "Screenshots1"
+  page_title:      "Create Screenshot"
+  page_subtitle:   "My Screenshots"
+  form_submit_btn: "Create screenshot"
+  empty_list_text: "No screenshots yet"
+
+# Блоки с фотографиями
+block:
+  btn_delete: "Delete"
+
+# Всплывающие окна
+modal:
+  # Ошибка при полочении скриншота
+  error:
+    title: "Oops..."
+    text:  "Something went wrong!"
+  # Вопрос при удалении скриншота
+  confirm:
+    title: "Are you sure?"
+    text:  "You won't be able to revert this!"
+    btn:
+      confirm: "Yes, delete it!"
+      cancel:  "Cancel"
+  # Успешное удаление скриншота
+  success:
+    title: "Deleted!"
+    text:  "Screenshot success remove!"

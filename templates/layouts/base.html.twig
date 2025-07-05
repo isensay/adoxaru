@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru" data-menu-color="dark">
+    
+    <head>
+        <meta charset="utf-8" />
+        
+        <title>{% block head_title %}{% endblock %} | {{ app_name }}</title>
+
+        <meta name="description" content="{% block head_description %}{% endblock %}" />
+        <meta name="author" content="{{ 'app_author'|trans }}"  />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <!-- App css -->
+        <link href="/source/base/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="/source/base/css/app.min.css?10" rel="stylesheet" type="text/css" id="app-stylesheet" /> -->
+        <link href="/source/base/css/app.css?<?=time()?>" rel="stylesheet" type="text/css" id="app-stylesheet" />
+
+        <!-- icons -->
+        <link href="/source/base/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Theme Config Js -->
+        <script src="/source/base/js/config.js?1"></script>
+
+        {% block head_resources %}{% endblock %}
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            {# Header #}
+            {% include 'includes/topbar.html.twig' %}
+            
+            {# Left menu #}
+            {% include 'includes/left_menu.html.twig' %}
+      
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        {# Content #}
+                        {% block body %}{% endblock %}
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                {# (base) #}
+                {% include 'includes/footer/base.html.twig' %}
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+        {# System settings menu #}
+        {% include 'includes/system_settings.html.twig' %}
+
+        <!-- Vendor js -->
+        <script src="/source/base/js/vendor.min.js"></script>
+
+        {# Page Java Script #}
+        {% block page_java_script %}{% endblock %}
+        
+        <!-- App js -->
+        <script src="/source/base/js/app.min.js"></script>
+
+        {# More Java Script #}
+        {% block page_more_java_script %}{% endblock %}
+        
+    </body>
+</html>

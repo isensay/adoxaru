@@ -1,0 +1,14 @@
+{
+    "name": "Adoxa",
+    "short_name": "Adoxa",
+    "icons": [
+        {
+            "src": "/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#3f4751",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru" data-menu-color="dark">
+    
+    <head>
+        <meta charset="utf-8" />
+        
+        <title>{% block head_title %}{% endblock %} | {{ app_name }}</title>
+
+        <meta name="description" content="{% block head_description %}{% endblock %}" />
+        <meta name="author" content="{{ 'app_author'|trans }}"  />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <!-- App css -->
+        <link href="/source/base/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="/source/base/css/app.min.css?10" rel="stylesheet" type="text/css" id="app-stylesheet" /> -->
+        <link href="/source/base/css/app.css?<?=time()?>" rel="stylesheet" type="text/css" id="app-stylesheet" />
+
+        <!-- icons -->
+        <link href="/source/base/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Theme Config Js -->
+        <script src="/source/base/js/config.js?1"></script>
+    </head>
+
+<body>
+
+    <div class="account-pages mt-5 mb-5">
+        <div class="container">
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            {# Content #}
+            {% block body %}{% endblock %}
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            {# (base) #}
+            {% include 'includes/footer/lite.html.twig' %}
+
+        </div>
+        <!-- end container -->
+
+    </div>
+    <!-- end page -->
+
+    <!-- Vendor js -->
+    <script src="/source/base/js/vendor.min.js"></script>
+
+    {# Page Java Script #}
+    <!-- App js -->
+    {% block page_java_script %}{% endblock %}
+
+    <!-- App js -->
+    <script src="/source/base/js/app.min.js"></script>
+
+    {# More Java Script #}
+    {% block page_more_java_script %}{% endblock %}
+  
+</body>
+</html>

@@ -1,0 +1,144 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}{{ 'base.head_title'|trans({}, 'screenshot') }}{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>{{ 'base.page_title'|trans({}, 'screenshots') }}</h1>
+    
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="input-group mb-3">
+            {{ form_widget(form.url, {
+                'attr': {
+                    'class': 'form-control',
+                    'placeholder': 'https://example.com'
+                }
+            }) }}
+            <button type="submit" class="btn btn-lg btn-primary">
+                {{ 'base.form_submit_btn'|trans({}, 'screenshots') }}
+            </button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+    <h2 class="mt-4">{{ 'base.page_subtitle'|trans({}, 'screenshots') }}</h2>
+    
+    <div class="row mt-3">
+        {% for screenshot in screenshots %}
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img 
+                        src="{{ asset('uploads/screenshots/' ~ screenshot.filename) }}" 
+                        class="card-img-top" 
+                        alt="Screenshot of {{ screenshot.url }}"
+                    >
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{{ screenshot.url }}" target="_blank">{{ screenshot.url }}</a>
+                        </h5>
+                        {#
+                        <p class="card-text">
+                            <small class="text-muted">
+                                {{ screenshot.createdAt|date('Y-m-d H:i') }} |
+                                {{ (screenshot.fileSize / 1024)|round(2) }} KB
+                            </small>
+                        </p>
+                        #}
+                        <form name="remove" method="post" action="{{ path('app_screenshot_delete', {'id': screenshot.id}) }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ screenshot.id) }}">
+                            <button class="btn btn-primary btn-sm mt-2">
+                                <i class="fas fa-trash"></i>
+                                {{ 'block.btn_delete'|trans({}, 'screenshots') }}
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-12">
+                <div class="alert alert-info">{{ 'base.empty_list_text'|trans({}, 'screenshots') }}</div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <ul class="pagination-rounded d-flex justify-content-center">
+        {{ knp_pagination_render(screenshots, 'pagination/custom_pagination.html.twig') }}
+    </ul>
+</div>
+{% endblock %}
+
+{% block head_resources %}
+<!-- Sweet Alert-->
+<link href="/source/base/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block page_more_java_script %}
+<!-- Sweet Alerts js -->
+<script src="/source/base/libs/sweetalert2/sweetalert2.min.js"></script>
+
+<!-- Sweet alert init js-->
+<script src="/source/base/js/pages/sweet-alerts.init.js"></script>
+{% for type, messages in app.flashes %}
+    {% for message in messages %}
+        {% if message == 'Screenshot success remove!' %}
+        <script>
+            Swal.fire({
+                title: "{{ 'modal.success.title'|trans({}, 'screenshots')|raw }}",
+                text:  "{{ 'modal.success.text'|trans({},  'screenshots')|raw }}",
+                icon:  "success",confirmButtonColor:"#1abc9c"
+            });
+        </script>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+<script>
+$(document).ready(function(){
+
+    {% if error %}
+    Swal.fire({
+        icon:  "error",
+        title: "{{ 'modal.error.title'|trans({}, 'screenshots')|raw }}",
+        text:  "{{ 'modal.error.text'|trans({}, 'screenshots')|raw }}",
+        confirmButtonColor: "#3bafda"
+    });
+    {% endif %}
+
+    function confirm_remove_screenshot(obj)
+    {
+        Swal.fire({
+            title: "{{ 'modal.confirm.title'|trans({}, 'screenshots')|raw }}",
+            text:  "{{ 'modal.confirm.text'|trans({},  'screenshots')|raw }}",
+            icon: 'question',
+            iconColor: "#f1556c",
+            confirmButtonColor: "#f1556c",
+            showCancelButton: true,
+            confirmButtonText: '{{ 'modal.confirm.btn.confirm'|trans({}, 'screenshots')|raw }}',
+            cancelButtonText:  '{{ 'modal.confirm.btn.cancel'|trans({},  'screenshots')|raw }}'
+        }).then((result) => {
+            if (result.isConfirmed) {
+               obj.off('submit');
+               obj.submit();
+               return true;
+            } else if (result.dismiss === Swal.DismissReason.cancel) {}
+        });
+    }
+    
+    $('form[name="screenshot"]').on('submit', function(event) {
+        event.preventDefault();
+        var obj = $('button', this);
+        obj.prop('disabled', true);
+        obj.text('');
+        obj.prepend('<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>');
+        this.submit();
+    });
+
+    $('form[name="remove"]').on('submit', function(event) {
+        var obj = $(this);
+        confirm_remove_screenshot(obj);
+        return false;
+    });
+});
+</script>
+{% endblock %}
