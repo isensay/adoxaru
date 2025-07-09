@@ -3,14 +3,12 @@
     
     <head>
         <meta charset="utf-8" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         
         <title>{% block head_title %}{% endblock %} | {{ app_name }}</title>
 
         <meta name="description" content="{% block head_description %}{% endblock %}" />
         <meta name="author" content="{{ 'app_author'|trans }}"  />
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
         <!-- App favicon -->
@@ -28,6 +26,12 @@
         <script src="/source/base/js/config.js?1"></script>
 
         {% block head_resources %}{% endblock %}
+
+        <style>
+        input, textarea, select {
+            font-size: 16px !important;
+        }
+        </style>
     </head>
 
     <body>
@@ -84,12 +88,6 @@
 
         {# More Java Script #}
         {% block page_more_java_script %}{% endblock %}
-
-        <style>
-        input, textarea, select {
-            font-size: 16px !important;
-        }
-        </style>
         
     </body>
 </html>
