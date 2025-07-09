@@ -124,6 +124,17 @@ $(document).ready(function(){
             } else if (result.dismiss === Swal.DismissReason.cancel) {}
         });
     }
+
+    $('input, textarea, select').on('blur', function() {
+        // Возвращаем масштаб через небольшой таймаут
+        setTimeout(function() {
+            // Сбрасываем трансформацию масштаба
+            $('body').css({
+            'transform': 'scale(1)',
+            'transform-origin': 'top left'
+            });
+        }, 100); // Небольшая задержка для надежности
+    });
     
     $('form[name="screenshot"]').on('submit', function(event) {
         event.preventDefault();
