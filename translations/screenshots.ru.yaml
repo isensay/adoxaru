@@ -3,7 +3,7 @@ base:
   head_title:      "Скриншоты"
   page_title:      "Создать скриншот"
   page_subtitle:   "Мои скриншоты"
-  form_submit_btn: "Создать скриншот"
+  form_submit_btn: "Создать"
   empty_list_text: "Скриншотов пока нет"
 
 # Блоки с фотографиями

@@ -29,12 +29,5 @@ class ScreenshotType extends AbstractType
                     'class' => 'form-control form-control-lg'
                 ]
             ]);
-            #->add('submit', SubmitType::class, [
-            #    'label' => 'Сделать скриншот',
-            #    'attr' => [
-            #        'placeholder' => 'https://example.com',
-            #        'class' => 'btn btn-primary mt-4'
-            #    ]
-            #]);
     }
 }

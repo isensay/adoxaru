@@ -3,7 +3,7 @@ base:
   head_title:      "Screenshots1"
   page_title:      "Create Screenshot"
   page_subtitle:   "My Screenshots"
-  form_submit_btn: "Create screenshot"
+  form_submit_btn: "Create"
   empty_list_text: "No screenshots yet"
 
 # Блоки с фотографиями
