@@ -1,10 +1,12 @@
 # Основное
 base:
-  head_title:      "Screenshots1"
-  page_title:      "Create Screenshot"
-  page_subtitle:   "My Screenshots"
-  form_submit_btn: "Create"
-  empty_list_text: "No screenshots yet"
+  head_title:             "Screenshots1"
+  page_title:             "Create Screenshot"
+  page_subtitle:          "My Screenshots"
+  form_not_blank_message: "Please enter URL" 
+  form_url_message:       "Please enter a valid URL"
+  form_submit_btn:        "Create"
+  empty_list_text:        "No screenshots yet"
 
 # Блоки с фотографиями
 block:
