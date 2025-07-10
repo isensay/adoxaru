@@ -35,8 +35,7 @@ class ScreenshotType extends AbstractType
                 ],
                 'attr' => [
                     'placeholder' => 'https://example.com',
-                    'class' => 'form-control form-control-lg',
-                    'type' => 'url'
+                    'class' => 'form-control form-control-lg'
                 ]
             ]);
     }
