@@ -14,7 +14,6 @@ final class TestController extends AbstractController
     public function index(LoggerInterface $logger): Response
     {
         $logger->error('PRODUCTION TEST LOG');
-
         return $this->render('test/test.html.twig', [
             'message' => 'Welcome to your new controller!',
             'path' => 'src/Controller/TestController.php',
