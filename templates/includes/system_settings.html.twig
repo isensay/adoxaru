@@ -273,108 +273,108 @@
 
             <div class="tab-pane active" id="settings-tab" role="tabpanel">
                 <h6 class="fw-medium px-3 m-0 py-2 font-13 text-uppercase bg-light">
-                    <span class="d-block py-1">{{ 'system_scheme.title'|trans }}</span>
+                    <span class="d-block py-1">{{ 'system_scheme.title'|trans({}, 'global') }}</span>
                 </h6>
 
                 <div class="p-3">
-                    <h6 class="fw-medium font-14 mb-2 pb-1">{{ 'system_scheme.color_scheme.title'|trans }}</h6>
+                    <h6 class="fw-medium font-14 mb-2 pb-1">{{ 'system_scheme.color_scheme.title'|trans({}, 'global') }}</h6>
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-bs-theme" value="light" id="light-mode-check" checked>
-                        <label class="form-check-label" for="light-mode-check">{{ 'system_scheme.color_scheme.light_mode'|trans }}</label>
+                        <label class="form-check-label" for="light-mode-check">{{ 'system_scheme.color_scheme.light_mode'|trans({}, 'global') }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-bs-theme" value="dark" id="dark-mode-check">
-                        <label class="form-check-label" for="dark-mode-check">{{ 'system_scheme.color_scheme.dark_mode'|trans }}</label>
+                        <label class="form-check-label" for="dark-mode-check">{{ 'system_scheme.color_scheme.dark_mode'|trans({}, 'global') }}</label>
                     </div>
 
                     <!-- Width -->
-                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.width.title'|trans }}</h6>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.width.title'|trans({}, 'global') }}</h6>
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-layout-width" value="fluid" id="fluid-check" checked>
-                        <label class="form-check-label" for="fluid-check">{{ 'system_scheme.width.fluid'|trans }}</label>
+                        <label class="form-check-label" for="fluid-check">{{ 'system_scheme.width.fluid'|trans({}, 'global') }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-layout-width" value="boxed" id="boxed-check">
-                        <label class="form-check-label" for="boxed-check">{{ 'system_scheme.width.boxed'|trans }}</label>
+                        <label class="form-check-label" for="boxed-check">{{ 'system_scheme.width.boxed'|trans({}, 'global') }}</label>
                     </div>
            
 
                     <!-- Topbar -->
-                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.topbar.title'|trans }}</h6>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.topbar.title'|trans({}, 'global') }}</h6>
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-topbar-color" value="light" id="lighttopbar-check">
-                        <label class="form-check-label" for="lighttopbar-check"> {{ 'system_scheme.topbar.light'|trans }}</label>
+                        <label class="form-check-label" for="lighttopbar-check"> {{ 'system_scheme.topbar.light'|trans({}, 'global') }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-topbar-color" value="dark" id="darktopbar-check" checked>
-                        <label class="form-check-label" for="darktopbar-check">{{ 'system_scheme.topbar.dark'|trans }}</label>
+                        <label class="form-check-label" for="darktopbar-check">{{ 'system_scheme.topbar.dark'|trans({}, 'global') }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-topbar-color" value="brand" id="brandtopbar-check">
-                        <label class="form-check-label" for="brandtopbar-check">{{ 'system_scheme.topbar.brand'|trans }}</label>
+                        <label class="form-check-label" for="brandtopbar-check">{{ 'system_scheme.topbar.brand'|trans({}, 'global') }}</label>
                     </div>
 
 
                     <!-- Menu positions -->
-                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.menu_positon.title'|trans|raw }}</h6>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.menu_positon.title'|trans({}, 'global')|raw }}</h6>
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-layout-position" value="fixed" id="fixed-check" checked>
-                        <label class="form-check-label" for="fixed-check">{{ 'system_scheme.menu_positon.fixed'|trans }}</label>
+                        <label class="form-check-label" for="fixed-check">{{ 'system_scheme.menu_positon.fixed'|trans({}, 'global') }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-layout-position" value="scrollable" id="scrollable-check">
-                        <label class="form-check-label" for="scrollable-check">{{ 'system_scheme.menu_positon.scrollable'|trans }}</label>
+                        <label class="form-check-label" for="scrollable-check">{{ 'system_scheme.menu_positon.scrollable'|trans({}, 'global') }}</label>
                     </div>
 
 
                     <!-- Menu Color-->
-                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.menu_color.title'|trans }}</h6>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.menu_color.title'|trans({}, 'global') }}</h6>
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-menu-color" value="light" id="light-check" checked>
-                        <label class="form-check-label" for="light-check">{{ 'system_scheme.menu_color.light'|trans }}</label>
+                        <label class="form-check-label" for="light-check">{{ 'system_scheme.menu_color.light'|trans({}, 'global') }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-menu-color" value="dark" id="dark-check">
-                        <label class="form-check-label" for="dark-check">{{ 'system_scheme.menu_color.dark'|trans }}</label>
+                        <label class="form-check-label" for="dark-check">{{ 'system_scheme.menu_color.dark'|trans({}, 'global') }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-menu-color" value="brand" id="brand-check">
-                        <label class="form-check-label" for="brand-check">{{ 'system_scheme.menu_color.brand'|trans }}</label>
+                        <label class="form-check-label" for="brand-check">{{ 'system_scheme.menu_color.brand'|trans({}, 'global') }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-menu-color" value="gradient" id="gradient-check">
-                        <label class="form-check-label" for="gradient-check">{{ 'system_scheme.menu_color.gradient'|trans }}</label>
+                        <label class="form-check-label" for="gradient-check">{{ 'system_scheme.menu_color.gradient'|trans({}, 'global') }}</label>
                     </div>
             
 
                     <!-- size -->
-                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.left_sidebar_size.title'|trans }}</h6>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">{{ 'system_scheme.left_sidebar_size.title'|trans({}, 'global') }}</h6>
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-sidebar-size" value="default" id="default-size-check" checked>
-                        <label class="form-check-label" for="default-size-check">{{ 'system_scheme.left_sidebar_size.default'|trans }}</label>
+                        <label class="form-check-label" for="default-size-check">{{ 'system_scheme.left_sidebar_size.default'|trans({}, 'global') }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-sidebar-size" value="compact" id="compact-check">
-                        <label class="form-check-label" for="compact-check">{{ 'system_scheme.left_sidebar_size.compact'|trans|raw }}</label>
+                        <label class="form-check-label" for="compact-check">{{ 'system_scheme.left_sidebar_size.compact'|trans({}, 'global')|raw }}</label>
                     </div>
 
                     <div class="form-check form-switch mb-1">
                         <input class="form-check-input" type="checkbox" name="data-sidebar-size" value="condensed" id="condensed-check">
-                        <label class="form-check-label" for="condensed-check">{{ 'system_scheme.left_sidebar_size.condensed'|trans|raw }}</label>
+                        <label class="form-check-label" for="condensed-check">{{ 'system_scheme.left_sidebar_size.condensed'|trans({}, 'global')|raw }}</label>
                     </div>
 
 
                     <div class="d-grid mt-4">
-                        <button class="btn btn-primary" id="resetBtn">{{ 'system_scheme.reset_to_default'|trans }}</button>
+                        <button class="btn btn-primary" id="resetBtn">{{ 'system_scheme.reset_to_default'|trans({}, 'global') }}</button>
                     </div>
 
                 </div>

@@ -1,6 +1,6 @@
 {% extends 'layouts/lite.html.twig' %}
     
-{% block head_title %}{{ 'login.title'|trans }}{% endblock %}
+{% block head_title %}{{ 'login.title'|trans({}, 'security') }}{% endblock %}
 
 {% block body %}
 
@@ -32,23 +32,23 @@
                             </span>
                         </a>
                     </div>
-                    <p class="text-muted mb-4 mt-3"> {{ 'login.text'|trans }} </p>
+                    <p class="text-muted mb-4 mt-3"> {{ 'login.text'|trans({}, 'security') }} </p>
                 </div>
 
                 <form method="post">
 
                     {% if error %}
-                        <div class="alert alert-danger">{{ 'login.error'|trans }}</div>
+                        <div class="alert alert-danger">{{ 'login.error'|trans({}, 'security') }}</div>
                     {% endif %}
 
                     <div class="mb-2">
-                        <label for="emailaddress" class="form-label"> {{ 'login.email'|trans }} </label>
+                        <label for="emailaddress" class="form-label"> {{ 'login.email'|trans({}, 'security') }} </label>
                         {# <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control @error('email') is-invalid @enderror" autocomplete="email" required autofocus> #}
                         <input type="email" value="" name="email" id="inputEmail" class="form-control @error('email') is-invalid @enderror" autocomplete="email" required autofocus>
                     </div>
 
                     <div class="mb-2">
-                        <label for="password" class="form-label"> {{ 'login.password'|trans }} </label>
+                        <label for="password" class="form-label"> {{ 'login.password'|trans({}, 'security') }} </label>
                         <div class="input-group input-group-merge">
                             <input type="password" value="" name="password" id="inputPassword" class="form-control @error('password') is-invalid @enderror" autocomplete="current-password" required>
                         </div>
@@ -58,13 +58,13 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="remember" name="remember_me" value="1" checked>
                             <label class="form-check-label" for="remember">
-                                {{ 'login.remember_me'|trans }}
+                                {{ 'login.remember_me'|trans({}, 'security') }}
                             </label>
                         </div>
                     </div>
 
                     <div class="d-grid mb-0 text-center">
-                        <button class="btn btn-primary" type="submit"> {{ 'login.btn.login'|trans }} </button>
+                        <button class="btn btn-primary" type="submit"> {{ 'login.btn.login'|trans({}, 'security') }} </button>
                     </div>
 
                     <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">

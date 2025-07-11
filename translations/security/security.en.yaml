@@ -1,0 +1,10 @@
+# Авторизация
+login:
+  title: "Log In"
+  text:  "Enter your email address and password to access system"
+  error: "Invalid credentials"
+  email: "Email"
+  password: "Password"
+  remember_me: "Remember me"
+  btn:
+    login: "Log In"

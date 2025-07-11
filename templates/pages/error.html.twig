@@ -1,6 +1,6 @@
 {% extends 'layouts/lite.html.twig' %}
     
-{% block head_title %}{{ "error_page.#{status_code}.title"|trans }}{% endblock %}
+{% block head_title %}{{ "error_page.#{status_code}.title"|trans({}, 'global') }}{% endblock %}
 
 {% block body %}
 <div class="row justify-content-center">
@@ -14,13 +14,13 @@
                 </div>
 
                 <div class="text-center">
-                    <h3 class="mt-4 text-uppercase fw-bold">{{ "error_page.#{status_code}.title"|trans }}</h3>
+                    <h3 class="mt-4 text-uppercase fw-bold">{{ "error_page.#{status_code}.title"|trans({}, 'global') }}</h3>
 
-                    <p class="text-muted mb-0 mt-3" style="line-height: 20px;">{{ "error_page.#{status_code}.description"|trans|raw }}</p>
+                    <p class="text-muted mb-0 mt-3" style="line-height: 20px;">{{ "error_page.#{status_code}.description"|trans({}, 'global') }}</p>
 
-                    <a class="btn btn-primary mt-4" href="/"><i class="mdi mdi-reply me-1"></i>{{ "error_page.btn_home"|trans }}</a>
+                    <a class="btn btn-primary mt-4" href="/"><i class="mdi mdi-reply me-1"></i>{{ "error_page.btn_home"|trans({}, 'global') }}</a>
                     
-                    <p class="text-muted mb-0 mt-5">{{ "error_page.support"|trans }}: <a href="javascript: void(0);">support@adoxa.ru</a></p>
+                    <p class="text-muted mb-0 mt-5">{{ "error_page.support"|trans({}, 'global') }}: <a href="javascript: void(0);">support@adoxa.ru</a></p>
                 </div>
 
             </div> <!-- end card-body -->

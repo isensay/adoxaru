@@ -14,11 +14,11 @@
                 <h4 class="mt-3 mb-0">  Петр Минкин </h4>
                 <p class="text-muted">@petrominkin</p>
 
-                <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light"> {{ 'profile.about.buttons.follow'|trans }} </button>
-                <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light"> {{ 'profile.about.buttons.message'|trans }} </button>
+                <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light"> {{ 'profile.about.buttons.follow'|trans({}, 'profile') }} </button>
+                <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light"> {{ 'profile.about.buttons.message'|trans({}, 'profile') }} </button>
 
                 <div class="text-start mt-3">
-                    <h4 class="font-13 text-uppercase"> {{ 'profile.about.about_me'|trans }} :</h4>
+                    <h4 class="font-13 text-uppercase"> {{ 'profile.about.about_me'|trans({}, 'profile') }} :</h4>
                     <p class="text-muted font-13 mb-3">
                         Это просто фиктивный текст для полиграфической промышленности.
                         Lorem Ipsum был стандартным в отрасли фиктивным текстом с 1500-х годов,
@@ -31,19 +31,19 @@
                         <table class="table table-borderless table-sm">
                             <tbody>
                                 <tr>
-                                    <th scope="row"> {{ 'profile.about.full_name'|trans }} :</th>
+                                    <th scope="row"> {{ 'profile.about.full_name'|trans({}, 'profile') }} :</th>
                                     <td class="text-muted">Петр Минкин</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"> {{ 'profile.about.phone'|trans }} :</th>
+                                    <th scope="row"> {{ 'profile.about.phone'|trans({}, 'profile') }} :</th>
                                     <td class="text-muted">(123) 123 1234</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"> {{ 'profile.about.email'|trans }} :</th>
+                                    <th scope="row"> {{ 'profile.about.email'|trans({}, 'profile') }} :</th>
                                     <td class="text-muted">user@email.domain</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"> {{ 'profile.about.location'|trans }} :</th>
+                                    <th scope="row"> {{ 'profile.about.location'|trans({}, 'profile') }} :</th>
                                     <td class="text-muted">Russia</td>
                                 </tr>
                             </tbody>
@@ -59,8 +59,8 @@
 
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title"> {{ 'profile.skills.title'|trans }} </h4>
-                <p class="sub-header font-13 mb-3"> {{ 'profile.skills.description'|trans }} </p>
+                <h4 class="header-title"> {{ 'profile.skills.title'|trans({}, 'profile') }} </h4>
+                <p class="sub-header font-13 mb-3"> {{ 'profile.skills.description'|trans({}, 'profile') }} </p>
 
                 <div class="pt-1">
                     <h6 class="text-uppercase mt-0">HTML5 <span class="float-end">90%</span></h6>
@@ -118,13 +118,13 @@
                     <li class="nav-item">
                         <a href="#about-me" data-bs-toggle="tab" aria-expanded="true" class="nav-link active ms-0">
                             <i class="mdi mdi-face-profile me-1"></i>
-                            {{ 'profile.experience.buttons.about_me'|trans }}
+                            {{ 'profile.experience.buttons.about_me'|trans({}, 'profile') }}
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#settings" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
                             <i class="mdi mdi-cog me-1"></i>
-                            {{ 'profile.experience.buttons.settings'|trans }}
+                            {{ 'profile.experience.buttons.settings'|trans({}, 'profile') }}
                         </a>
                     </li>
                 </ul>
@@ -133,7 +133,7 @@
                     
                     <div class="tab-pane show active" id="about-me">
 
-                        <h5 class="mb-4 text-uppercase"> {{ 'profile.experience.title'|trans }} </h5>
+                        <h5 class="mb-4 text-uppercase"> {{ 'profile.experience.title'|trans({}, 'profile') }} </h5>
 
                         <ul class="list-unstyled timeline-sm">
                             <li class="timeline-sm-item">
@@ -172,11 +172,11 @@
                                 <thead class="table-light">
                                     <tr>
                                         <th>#</th>
-                                        <th> {{ 'profile.projects.table_titles.project_name'|trans }} </th>
-                                        <th> {{ 'profile.projects.table_titles.start_date'|trans }} </th>
-                                        <th> {{ 'profile.projects.table_titles.due_date'|trans }} </th>
-                                        <th> {{ 'profile.projects.table_titles.status'|trans }} </th>
-                                        <th> {{ 'profile.projects.table_titles.client'|trans }} </th>
+                                        <th> {{ 'profile.projects.table_titles.project_name'|trans({}, 'profile') }} </th>
+                                        <th> {{ 'profile.projects.table_titles.start_date'|trans({}, 'profile') }} </th>
+                                        <th> {{ 'profile.projects.table_titles.due_date'|trans({}, 'profile') }} </th>
+                                        <th> {{ 'profile.projects.table_titles.status'|trans({}, 'profile') }} </th>
+                                        <th> {{ 'profile.projects.table_titles.client'|trans({}, 'profile') }} </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -185,7 +185,7 @@
                                         <td>App design and development</td>
                                         <td>01/01/2015</td>
                                         <td>10/15/2018</td>
-                                        <td><span class="badge bg-info"> {{ 'profile.project_status.work_in_progress'|trans }} </span></td>
+                                        <td><span class="badge bg-info"> {{ 'profile.project_status.work_in_progress'|trans({}, 'profile') }} </span></td>
                                         <td>Halette Boivin</td>
                                     </tr>
                                     <tr>
@@ -193,7 +193,7 @@
                                         <td>Coffee detail page - Main Page</td>
                                         <td>21/07/2016</td>
                                         <td>12/05/2018</td>
-                                        <td><span class="badge bg-success"> {{ 'profile.project_status.pending'|trans }} </span></td>
+                                        <td><span class="badge bg-success"> {{ 'profile.project_status.pending'|trans({}, 'profile') }} </span></td>
                                         <td>Durandana Jolicoeur</td>
                                     </tr>
                                     <tr>
@@ -201,7 +201,7 @@
                                         <td>Poster illustation design</td>
                                         <td>18/03/2018</td>
                                         <td>28/09/2018</td>
-                                        <td><span class="badge bg-pink"> {{ 'profile.project_status.done'|trans }} </span></td>
+                                        <td><span class="badge bg-pink"> {{ 'profile.project_status.done'|trans({}, 'profile') }} </span></td>
                                         <td>Lucas Sabourin</td>
                                     </tr>
                                     <tr>
@@ -209,7 +209,7 @@
                                         <td>Drinking bottle graphics</td>
                                         <td>02/10/2017</td>
                                         <td>07/05/2018</td>
-                                        <td><span class="badge bg-danger"> {{ 'profile.project_status.on_hold'|trans }} </span></td>
+                                        <td><span class="badge bg-danger"> {{ 'profile.project_status.on_hold'|trans({}, 'profile') }} </span></td>
                                         <td>Donatien Brunelle</td>
                                     </tr>
                                     <tr>
@@ -217,7 +217,7 @@
                                         <td>Landing page design - Home</td>
                                         <td>17/01/2017</td>
                                         <td>25/05/2021</td>
-                                        <td><span class="badge bg-warning"> {{ 'profile.project_status.coming_soon'|trans }} </span></td>
+                                        <td><span class="badge bg-warning"> {{ 'profile.project_status.coming_soon'|trans({}, 'profile') }} </span></td>
                                         <td>Karel Auberjo</td>
                                     </tr>
 

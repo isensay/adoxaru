@@ -4,7 +4,7 @@
 {# Page Content #}
 {% extends 'layouts/lite.html.twig' %}
     
-{% block head_title %}{{ 'comming_soon.head_title'|trans }}{% endblock %}
+{% block head_title %}{{ 'comming_soon.head_title'|trans({}, 'global') }}{% endblock %}
 
 {% block body %}
 <div class="row justify-content-center">
@@ -15,8 +15,8 @@
 
 			<img src="/source/base/images/animat-rocket-color.gif" alt="" height="160">
 
-			<h3 class="mt-4">{{ 'comming_soon.page_title'|trans }}</h3>
-			<p class="text-muted">{{ 'comming_soon.page_text'|trans }}</p>
+			<h3 class="mt-4">{{ 'comming_soon.page_title'|trans({}, 'global') }}</h3>
+			<p class="text-muted">{{ 'comming_soon.page_text'|trans({}, 'global') }}</p>
 
 			<div class="row mt-5 justify-content-center">
 				<div class="col-md-8">

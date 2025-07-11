@@ -34,14 +34,14 @@
                     {# <a href="" data-bs-toggle="collapse" aria-expanded="false" aria-controls="sidebarDashboards" class="waves-effect"> #}
                     <a href="{{ path('app_home') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="waves-effect">
                         <i class="ri-home-3-line"></i>
-                        <span>{{ 'left_menu.btn.home'|trans }}</span>
+                        <span>{{ 'left_menu.btn.home'|trans({}, 'global') }}</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{ path('app_screenshots') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="waves-effect">
                         <i class="ri-home-3-line"></i>
-                        <span>{{ 'left_menu.btn.screenshots'|trans }}</span>
+                        <span>{{ 'left_menu.btn.screenshots'|trans({}, 'global') }}</span>
                     </a>
                 </li>
 
@@ -49,14 +49,14 @@
                 <li>
                     <a href="" class="waves-effect">
                         <i class="ri-tools-line"></i>
-                        <span>{{ 'left_menu.btn.maintenance'|trans }}</span>
+                        <span>{{ 'left_menu.btn.maintenance'|trans({}, 'global') }}</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="" class="waves-effect">
                         <i class="ri-time-line"></i>
-                        <span>{{ 'left_menu.btn.cooming_soon'|trans }}</span>
+                        <span>{{ 'left_menu.btn.cooming_soon'|trans({}, 'global') }}</span>
                     </a>
                 </li>
 
@@ -68,39 +68,39 @@
                 <li>
                     <a href="#sidebarMultilevel" data-bs-toggle="collapse" aria-expanded="false" aria-controls="sidebarMultilevel">
                         <i class="ri-share-line"></i>
-                        <span>{{ 'left_menu.btn.system_pages.parent'|trans }}</span>
+                        <span>{{ 'left_menu.btn.system_pages.parent'|trans({}, 'global') }}</span>
                         <span class="menu-arrow"></span>
                     </a>
 
                     <div class="collapse" id="sidebarMultilevel">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ path('test_maintenance') }}">{{ 'left_menu.btn.system_pages.maintenance'|trans }}</a>
+                                <a href="{{ path('test_maintenance') }}">{{ 'left_menu.btn.system_pages.maintenance'|trans({}, 'global') }}</a>
                             </li>
                             <li>
-                                <a href="{{ path('test_comming_soon') }}">{{ 'left_menu.btn.system_pages.comming_soon'|trans }}</a>
+                                <a href="{{ path('test_comming_soon') }}">{{ 'left_menu.btn.system_pages.comming_soon'|trans({}, 'global') }}</a>
                             </li>
                             
 
                             <li>
-                                <a href="#sidebarMultilevel3" data-bs-toggle="collapse" aria-expanded="false" aria-controls="sidebarMultilevel3">{{ 'left_menu.btn.system_pages.errors'|trans }}<span class="menu-arrow"></span>
+                                <a href="#sidebarMultilevel3" data-bs-toggle="collapse" aria-expanded="false" aria-controls="sidebarMultilevel3">{{ 'left_menu.btn.system_pages.errors'|trans({}, 'global') }}<span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="sidebarMultilevel3">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="{{ path('test_error_401') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans }} - 401</a>
+                                            <a href="{{ path('test_error_401') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans({}, 'global') }} - 401</a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('test_error_403') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans }} - 403</a>
+                                            <a href="{{ path('test_error_403') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans({}, 'global') }} - 403</a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('test_error_404') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans }} - 404</a>
+                                            <a href="{{ path('test_error_404') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans({}, 'global') }} - 404</a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('test_error_419') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans }} - 419</a>
+                                            <a href="{{ path('test_error_419') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans({}, 'global') }} - 419</a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('test_error_500') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans }} - 500</a>
+                                            <a href="{{ path('test_error_500') }}">{{ 'left_menu.btn.system_pages.prefix_error'|trans({}, 'global') }} - 500</a>
                                         </li>
                                     </ul>
                                 </div>

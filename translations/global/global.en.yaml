@@ -1,17 +1,3 @@
-# Глобальное
-app_author: "Petr Minkin"
-
-# Авторизация
-login:
-  title: "Log In"
-  text:  "Enter your email address and password to access system"
-  error: "Invalid credentials"
-  email: "Email"
-  password: "Password"
-  remember_me: "Remember me"
-  btn:
-    login: "Log In"
-
 # Боковое (левое) меню
 left_menu:
   btn:
@@ -76,7 +62,6 @@ system_scheme:
     condensed: "Condensed <small>(Extra Small size)</small>"
 
 # Сервисные страницы >>>
-
 error_page:
   401:
     title:       "Unauthorized"
@@ -109,12 +94,10 @@ error_page:
         text:  "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embar"
   btn_home: "Back to Home"
   support:  "Support"
-
 comming_soon:
     head_title: "Comming soon"
     page_title: "Stay tunned, we're launching very soon"
     page_text:  "We're making the system more awesome"
-
 # Сервисные страницы <<<
 
 # Footer
@@ -126,37 +109,5 @@ footer:
     help:       "Help"
     contact_us: "Contct us"
 
-# Профиль
-profile:
-  page_title: "Profile"
-  about:
-    buttons:
-      follow:  "Follow"
-      message: "Message"
-    about_me: "About me"
-    full_name: "Full Name"
-    phone: "Mobile"
-    email: "Email"
-    location: "Location"
-  skills:
-    title: "Skills"
-    description: "Here are my main skills and my subjective assessment of these skills."
-  experience:
-    title: "Experience"
-    buttons:
-      about_me: "About Me"
-      settings: "Settings"
-  projects:
-    title: "Projects"
-    table_titles:
-      project_name: "Project Name"
-      start_date: "Start Date"
-      due_date: "Due Date"
-      status: "Status"
-      client: "Client"
-  project_status:
-    work_in_progress: "Work in Progress"
-    pending: "Pending"
-    done: "Done"
-    on_hold: "On Hold"
-    coming_soon: "Coming soon"
+# Автор
+app_author: "Petr Minkin"
