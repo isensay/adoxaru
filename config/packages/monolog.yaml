@@ -81,6 +81,9 @@ when@prod:
                 path: "%kernel.logs_dir%/security.log"
                 level: info
                 channels: ["security"]
+                excluded_messages:
+                    - "Remember-me cookie accepted"
+                    - "Authenticator successful!"
             
             # Обработчик для остальных ошибок
             nested:
