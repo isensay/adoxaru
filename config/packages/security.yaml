@@ -1,7 +1,4 @@
 security:
-    log:
-        success: false    # Отключаем логирование успешных попыток
-        failure: true     # Включаем логирование неудачных попыток
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
         #Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
