@@ -40,7 +40,7 @@ when@test:
                 path: "%kernel.logs_dir%/%kernel.environment%.log"
                 level: debug
 
-when@prod:
+when@old_prod:
     monolog:
         handlers:
             main:
@@ -65,7 +65,7 @@ when@prod:
                 level: error
                 channels: ["!event"]
 
-when@old_prod2:
+when@prod:
     monolog:
         handlers:
             main:
