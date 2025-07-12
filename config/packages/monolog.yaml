@@ -63,17 +63,7 @@ when@prod:
                 channels: ["request"]
                 max_files: 30
                 formatter: monolog.formatter.line
-                include_stacktraces: true
-            
-            # Обработчик для неудачных попыток авторизации
-            #auth_failures:
-            #    type: rotating_file
-            #    path: "%kernel.logs_dir%/auth_failures.log"
-            #    level: warning  # Уровень для неудачных попыток
-            #    channels: ["security"]
-            #    max_files: 30
-            #    formatter: monolog.formatter.line
-            #    include_stacktraces: true
+                include_stacktraces: false
 
             # Дополнительный обработчик для security
             security_log:
