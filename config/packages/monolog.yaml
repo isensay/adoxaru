@@ -57,7 +57,7 @@ when@prod:
             nested:
                 type: stream
                 path: "%kernel.logs_dir%/prod.log"  # Пишем в файл вместо stderr
-                level: debug
+                level: error
                 formatter: monolog.formatter.line  # Более читаемый формат
             errors:
                 type: stream
