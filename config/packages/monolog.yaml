@@ -65,7 +65,7 @@ when@old_prod:
                 level: error
                 channels: ["!event"]
 
-when@old_prod:
+when@old_prod2:
     monolog:
         handlers:
             main:
