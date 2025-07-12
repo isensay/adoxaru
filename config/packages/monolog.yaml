@@ -42,6 +42,9 @@ when@test:
 
 when@prod:
     monolog:
+        channels:
+            - security
+            - request
         handlers:
             # Основной обработчик (исключает 404)
             main:
@@ -61,7 +64,7 @@ when@prod:
                 type: rotating_file
                 path: "%kernel.logs_dir%/not_found.log"
                 level: warning
-                channels: ["request"]  # 404 ошибки попадают в канал request
+                channels: ["request"]
                 max_files: 30
                 formatter: monolog.formatter.line
                 include_stacktraces: true
