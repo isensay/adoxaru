@@ -40,7 +40,7 @@ when@test:
                 path: "%kernel.logs_dir%/%kernel.environment%.log"
                 level: debug
 
-when@old_prod:
+when@prod:
     monolog:
         handlers:
             main:
