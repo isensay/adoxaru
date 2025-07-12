@@ -54,11 +54,6 @@ when@prod:
                 handler: nested
                 buffer_size: 50
                 channels: ["!security", "!request"]  # Исключаем security и request
-
-            # Группа обработчиков
-            aggregated:
-                type: group
-                members: [app_errors, not_found]
             
             # Обработчик для 404 ошибок
             not_found:
@@ -69,14 +64,6 @@ when@prod:
                 max_files: 30
                 formatter: monolog.formatter.line
                 include_stacktraces: true
-
-            # Обработчик для остальных ошибок
-            app_errors:
-                type: rotating_file
-                path: "%kernel.logs_dir%/app_errors.log"
-                level: error
-                max_files: 30
-                formatter: monolog.formatter.line
             
             # Обработчик для неудачных попыток авторизации
             #auth_failures:
