@@ -43,50 +43,11 @@ when@test:
 when@prod:
     monolog:
         handlers:
-            # Основной обработчик (ловит все ошибки)
-            main:
-                type: fingers_crossed
-                action_level: error  # Минимальный уровень для логирования
-                handler: aggregated
-                excluded_http_codes: []  # Не исключаем никакие коды ответов
-                buffer_size: 200  # Сохраняет последние 200 сообщений перед записью
-            
-            # Групповой обработчик (разделяем логи)
-            aggregated:
-                type: group
-                members: [file_log, error_log]
-            
-            # Подробные логи (все события)
-            file_log:
-                type: rotating_file
-                path: "%kernel.logs_dir%/prod_%kernel.environment%.log"
-                level: debug
-                max_files: 30
-                file_permission: 0664
-            
-            # Только ошибки
-            error_log:
-                type: rotating_file
-                path: "%kernel.logs_dir%/prod_errors.log"
-                level: error
-                max_files: 90
-                file_permission: 0664
-            
-            # Логи 404 ошибок
-            not_found:
-                type: stream
-                path: "%kernel.logs_dir%/not_found.log"
-                level: warning
-                channels: ["request"]
-
-when@old_prod:
-    monolog:
-        handlers:
             main:
                 type: fingers_crossed
                 action_level: debug
                 handler: nested
-                excluded_http_codes: [405]
+                excluded_http_codes: [404,405]
                 buffer_size: 50 # How many messages should be saved? Prevent memory leaks
             nested:
                 type: stream
