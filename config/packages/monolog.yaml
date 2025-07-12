@@ -49,6 +49,11 @@ when@prod:
                 handler: nested
                 excluded_http_codes: []  # Убрали исключение для 405
                 buffer_size: 50
+            not_found:
+                type: stream
+                path: "%kernel.logs_dir%/not_found.log"
+                level: warning
+                channels: ["request"]
             nested:
                 type: stream
                 path: "%kernel.logs_dir%/prod.log"  # Пишем в файл вместо stderr
