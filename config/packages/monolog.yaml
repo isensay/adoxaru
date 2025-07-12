@@ -78,9 +78,18 @@ when@prod:
             # Дополнительный обработчик для security
             security_log:
                 type: stream
-                path: "%kernel.logs_dir%/security.log"
+                path: "%kernel.logs_dir%/security1.log"
                 level: info
                 channels: ["security"]
+
+            # Обработчик для security (только ошибки)
+            security:
+                type: rotating_file
+                path: "%kernel.logs_dir%/security2.log"
+                level: info  # Игнорируем INFO-сообщения
+                channels: ["security"]
+                formatter: monolog.formatter.line
+                max_files: 30
                 excluded_messages:
                     - "Remember-me cookie accepted"
                     - "Authenticator successful!"
