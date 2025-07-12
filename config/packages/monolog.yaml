@@ -42,66 +42,30 @@ when@test:
 
 when@prod:
     monolog:
-        channels: ['security']  # Явно активируем канал security
+        channels:
+            - security
+            - request
+        
         handlers:
-            # Основной обработчик (исключает 404)
+            # Основной обработчик ошибок
             main:
                 type: fingers_crossed
                 action_level: error
-                handler: aggregated
-                excluded_http_codes: [404]  # Исключаем 404 из основного лога
+                handler: nested
                 buffer_size: 50
-                channels: ["!security"]  # Полностью исключаем канал security
-            
-            # Группа обработчиков
-            aggregated:
-                type: group
-                members: [app_errors, not_found]
+                channels: ["!security", "!request"]  # Исключаем security и request
             
             # Обработчик для 404 ошибок
             not_found:
                 type: rotating_file
                 path: "%kernel.logs_dir%/not_found.log"
                 level: warning
-                channels: ["request"]  # 404 ошибки попадают в канал request
+                channels: ["request"]
                 max_files: 30
                 formatter: monolog.formatter.line
                 include_stacktraces: true
             
-            # Обработчик для остальных ошибок
-            app_errors:
-                type: rotating_file
-                path: "%kernel.logs_dir%/app_errors.log"
-                level: error
-                max_files: 30
-                formatter: monolog.formatter.line
-            
-            # Дополнительный обработчик для security
-            #security_log:
-            #    type: rotating_file
-            #    path: "%kernel.logs_dir%/security.log"
-            #    level: warning  # Игнорируем INFO-сообщения
-            #    channels: ["security"]
-            #    formatter: monolog.formatter.line
-            #    max_files: 30
-
-            # Обработчик для security (только ошибки)
-            #security:
-            #    type: rotating_file
-            #    path: "%kernel.logs_dir%/security.log"
-            #    level: warning  # Игнорируем INFO-сообщения (успешная аутентификация)
-            #    channels: ["security"]
-            #    max_files: 7
-            
-            # Обработчик для важных security-событий
-            #security_critical:
-            #    type: rotating_file
-            #    path: "%kernel.logs_dir%/security_critical.log"
-            #    level: critical  # Только самые важные события
-            #    channels: ["security"]
-            #    max_files: 30
-
-            # Обработчик для неудачных попыток аутентификации
+            # Обработчик для неудачных попыток авторизации
             auth_failures:
                 type: rotating_file
                 path: "%kernel.logs_dir%/auth_failures.log"
@@ -110,6 +74,14 @@ when@prod:
                 max_files: 30
                 formatter: monolog.formatter.line
                 include_stacktraces: true
+            
+            # Обработчик для остальных ошибок
+            nested:
+                type: rotating_file
+                path: "%kernel.logs_dir%/app_errors.log"
+                level: error
+                max_files: 30
+                formatter: monolog.formatter.line
 
 when@old_prod2:
     monolog:
