@@ -66,10 +66,20 @@ when@prod:
                 include_stacktraces: true
             
             # Обработчик для неудачных попыток авторизации
-            auth_failures:
+            #auth_failures:
+            #    type: rotating_file
+            #    path: "%kernel.logs_dir%/auth_failures.log"
+            #    level: warning  # Уровень для неудачных попыток
+            #    channels: ["security"]
+            #    max_files: 30
+            #    formatter: monolog.formatter.line
+            #    include_stacktraces: true
+
+            # Дополнительный обработчик для security
+            security_log:
                 type: rotating_file
-                path: "%kernel.logs_dir%/auth_failures.log"
-                level: warning  # Уровень для неудачных попыток
+                path: "%kernel.logs_dir%/security.log"
+                level: info
                 channels: ["security"]
                 max_files: 30
                 formatter: monolog.formatter.line
