@@ -45,6 +45,7 @@ when@prod:
         channels:
             - security
             - request
+
         handlers:
             # Основной обработчик (исключает 404)
             main:
@@ -53,6 +54,7 @@ when@prod:
                 handler: aggregated
                 excluded_http_codes: [404]  # Исключаем 404 из основного лога
                 buffer_size: 50
+                channels: ["!security", "!request"]  # Исключаем security и request
             
             # Группа обработчиков
             aggregated:
