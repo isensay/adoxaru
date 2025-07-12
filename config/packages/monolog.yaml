@@ -45,21 +45,15 @@ when@prod:
         channels:
             - security
             - request
-
+        
         handlers:
-            # Основной обработчик (исключает 404)
+            # Основной обработчик ошибок
             main:
                 type: fingers_crossed
                 action_level: error
-                handler: aggregated
-                excluded_http_codes: [404]  # Исключаем 404 из основного лога
+                handler: nested
                 buffer_size: 50
                 channels: ["!security", "!request"]  # Исключаем security и request
-            
-            # Группа обработчиков
-            aggregated:
-                type: group
-                members: [app_errors, not_found]
             
             # Обработчик для 404 ошибок
             not_found:
@@ -71,22 +65,23 @@ when@prod:
                 formatter: monolog.formatter.line
                 include_stacktraces: true
             
+            # Обработчик для неудачных попыток авторизации
+            auth_failures:
+                type: rotating_file
+                path: "%kernel.logs_dir%/auth_failures.log"
+                level: warning  # Уровень для неудачных попыток
+                channels: ["security"]
+                max_files: 30
+                formatter: monolog.formatter.line
+                include_stacktraces: true
+            
             # Обработчик для остальных ошибок
-            app_errors:
+            nested:
                 type: rotating_file
                 path: "%kernel.logs_dir%/app_errors.log"
                 level: error
                 max_files: 30
                 formatter: monolog.formatter.line
-            
-            # Дополнительный обработчик для security
-            security_log:
-                type: rotating_file
-                path: "%kernel.logs_dir%/security.log"
-                level: warning  # Игнорируем INFO-сообщения
-                channels: ["security"]
-                formatter: monolog.formatter.line
-                max_files: 30
 
 when@old_prod2:
     monolog:
