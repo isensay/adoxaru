@@ -45,25 +45,27 @@ when@prod:
         handlers:
             main:
                 type: fingers_crossed
-                action_level: error  # Логировать начиная с debug-уровня
-                handler: nested
-                excluded_http_codes: []  # Убрали исключение для 405
+                action_level: error
+                handler: filtered
                 buffer_size: 50
-            not_found:
-                type: stream
-                path: "%kernel.logs_dir%/not_found.log"
-                level: warning
-                channels: ["request"]
+                channels: ["!security", "!event"]
+            
+            filtered:
+                type: filter
+                handler: nested
+                accepted_levels: ["error", "critical"]
+            
             nested:
-                type: stream
-                path: "%kernel.logs_dir%/prod.log"  # Пишем в файл вместо stderr
-                level: debug
-                formatter: monolog.formatter.line  # Более читаемый формат
-            errors:
-                type: stream
-                path: "%kernel.logs_dir%/error.log"
+                type: rotating_file
+                path: "%kernel.logs_dir%/prod.log"
                 level: error
-                channels: ["!event"]
+                max_files: 30
+            
+            security_log:
+                type: stream
+                path: "%kernel.logs_dir%/security.log"
+                level: info
+                channels: ["security"]
 
 when@old_prod2:
     monolog:
