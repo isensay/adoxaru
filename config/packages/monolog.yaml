@@ -67,10 +67,13 @@ when@prod:
 
             # Дополнительный обработчик для security
             security_log:
-                type: stream
+                type: rotating_file
                 path: "%kernel.logs_dir%/security.log"
                 level: info
                 channels: ["security"]
+                max_files: 30
+                formatter: monolog.formatter.line
+                include_stacktraces: false
             
             # Обработчик для остальных ошибок
             nested:
