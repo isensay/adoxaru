@@ -40,12 +40,12 @@ when@test:
                 path: "%kernel.logs_dir%/%kernel.environment%.log"
                 level: debug
 
-when@old_prod:
+when@prod:
     monolog:
         handlers:
             main:
                 type: fingers_crossed
-                action_level: debug  # Логировать начиная с debug-уровня
+                action_level: error  # Логировать начиная с debug-уровня
                 handler: nested
                 excluded_http_codes: [404,405]  # Убрали исключение для 405
                 buffer_size: 50
@@ -60,7 +60,7 @@ when@old_prod:
                 level: error
                 channels: ["!event"]
 
-when@prod:
+when@old_prod:
     monolog:
         handlers:
             main:
