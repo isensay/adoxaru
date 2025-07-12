@@ -45,7 +45,7 @@ when@prod:
         handlers:
             main:
                 type: fingers_crossed
-                action_level: debug  # Логировать начиная с debug-уровня
+                action_level: error  # Логировать начиная с debug-уровня
                 handler: nested
                 excluded_http_codes: []  # Убрали исключение для 405
                 buffer_size: 50
