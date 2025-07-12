@@ -72,7 +72,8 @@ when@prod:
                 level: info
                 channels: ["security"]
                 max_files: 30
-                formatter: monolog.formatter.line
+                #formatter: monolog.formatter.line
+                formatter: monolog.formatter.json
                 include_stacktraces: false
             
             # Обработчик для остальных ошибок
