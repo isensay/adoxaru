@@ -50,6 +50,7 @@ when@prod:
                 handler: aggregated
                 excluded_http_codes: [404]  # Исключаем 404 из основного лога
                 buffer_size: 50
+                channels: ["!security"]  # Полностью исключаем канал security
             
             # Группа обработчиков
             aggregated:
@@ -76,10 +77,12 @@ when@prod:
             
             # Дополнительный обработчик для security
             security_log:
-                type: stream
+                type: rotating_file
                 path: "%kernel.logs_dir%/security.log"
-                level: info
+                level: warning  # Игнорируем INFO-сообщения
                 channels: ["security"]
+                formatter: monolog.formatter.line
+                max_files: 30
 
 when@old_prod2:
     monolog:
