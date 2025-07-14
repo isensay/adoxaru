@@ -1,3 +1,9 @@
+disk:
+  name: "Системный диск"
+  unit: "Гб"
+ram:
+  name: "Оперативная память"
+  unit: "Гб"
 exchange_rates:
   date: "сегодня"
   info: "по курсу ЦБ РФ"

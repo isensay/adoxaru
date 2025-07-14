@@ -1,3 +1,9 @@
+disk:
+  name: "System disk"
+  unit: "Gb"
+ram:
+  name: "Random-access memory"
+  unit: "Gb"
 exchange_rates:
   date: "today"
   info: "CB RF exchange rate"

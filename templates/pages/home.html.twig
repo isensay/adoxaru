@@ -7,44 +7,47 @@
 
     <div class="row">
 
+        {# Информация о системном диске #}
         <div class="col-xl-3 col-md-6 mb-3">
             <div class="card fixed-height-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="knob-chart invisible" dir="ltr">
                             <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f06b78"
-                                data-bgColor="#fbdee1" value="58"
+                                data-bgColor="#fbdee1" value="{{ disk.used_percent }}"
                                 data-skin="tron" data-angleOffset="0" data-readOnly=true
                                 data-thickness=".15"/>
                         </div>
                         <div class="text-end">
-                            <h3 class="mb-1 mt-0"> <span data-plugin="counterup">268</span> </h3>
-                            <p class="text-muted mb-0">New Customers</p>
+                            <h3 class="mb-1 mt-0"> <span data-plugin="counterup">{{ disk.total }}</span> {{ 'disk.unit'|trans({}, 'home') }} </h3>
+                            <p class="text-muted mb-0">{{ 'disk.name'|trans({}, 'home') }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div><!-- end col -->
 
+        {# Информация о оперативной памяти #}
         <div class="col-xl-3 col-md-6 mb-3">
             <div class="card fixed-height-card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="knob-chart invisible" dir="ltr">
                             <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#6c757d"
-                                data-bgColor="#ebeff2" value="80"
+                                data-bgColor="#ebeff2" value="{{ ram.used_percent }}"
                                 data-skin="tron" data-angleOffset="0" data-readOnly=true
                                 data-thickness=".15"/>
                         </div>
                         <div class="text-end">
-                            <h3 class="mb-1 mt-0"> <span data-plugin="counterup">8574</span> </h3>
-                            <p class="text-muted mb-0">Online Orders</p>
+                            <h3 class="mb-1 mt-0"> <span data-plugin="counterup">{{ ram.total }}</span> {{ 'ram.unit'|trans({}, 'home') }} </h3>
+                            <p class="text-muted mb-0">{{ 'ram.name'|trans({}, 'home') }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div><!-- end col -->
 
+        {# Информация о курсе валюты USD #}
         <div class="col-xl-3 col-md-6 mb-3">
             <div class="card fixed-height-card">
                 <div class="card-body">
@@ -70,6 +73,7 @@
             </div>
         </div><!-- end col -->
 
+        {# Информация о курсе валюты EUR #}
         <div class="col-xl-3 col-md-6 mb-3">
             <div class="card fixed-height-card">
                 <div class="card-body">
