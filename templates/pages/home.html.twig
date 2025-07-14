@@ -13,7 +13,8 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="knob-chart invisible" dir="ltr">
-                            <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#f06b78"
+                            {% set diskColor = (disk.used_percent > 70) ? '#f05050 ' : '#23b397' %}
+                            <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="{{ diskColor }}"
                                 data-bgColor="#fbdee1" value="{{ disk.used_percent }}"
                                 data-skin="tron" data-angleOffset="0" data-readOnly=true
                                 data-thickness=".15"/>
@@ -33,7 +34,8 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="knob-chart invisible" dir="ltr">
-                            <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="#6c757d"
+                            {% set ramColor = (ram.used_percent > 70) ? '#f05050 ' : '#23b397' %}
+                            <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="{{ ramColor }}"
                                 data-bgColor="#ebeff2" value="{{ ram.used_percent }}"
                                 data-skin="tron" data-angleOffset="0" data-readOnly=true
                                 data-thickness=".15"/>
