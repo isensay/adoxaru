@@ -84,7 +84,7 @@ class ExchangeRateService
                 // Проверяем, что дата курса не в будущем
                 if (date('Y-m-d', $rateUnixtime) > date('Y-m-d')) {
                     print('Rate date is in future: '.date('Y-m-d', $rateUnixtime));
-                    return false;
+                    return true;
                 }
 
                 $rateDate = new \DateTime(date('Y-m-d', $rateUnixtime).'T12:05:00.0 +03:00');
