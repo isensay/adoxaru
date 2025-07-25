@@ -13,7 +13,8 @@ framework:
     # Note that the session will be started ONLY if you read or write from it.
     #session: true
     session:
-        handler_id: 'redis://redis'
+        #handler_id: 'redis://redis'
+        handler_id: 'redis://redis?read_write_timeout=5&timeout=10'
         enabled: true
 
         cookie_secure: auto
