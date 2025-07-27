@@ -1,32 +1,3 @@
-colors = ["#727cf5", "#02a8b5", "#fd7e14"];
-(dataColors = $("#marketing-reports").data("colors")) && (colors = dataColors.split(","));
-options = {
-    chart: { height: 274, type: "radar", toolbar: { show: !1 } },
-    series: [
-        { name: "Series 1", data: [80, 50, 30, 40, 100, 20] },
-        { name: "Series 2", data: [20, 30, 40, 80, 20, 80] },
-        { name: "Series 3", data: [44, 76, 78, 13, 43, 10] },
-    ],
-    stroke: { width: 0 },
-    fill: { opacity: 0.4 },
-    markers: { size: 0 },
-    legend: { show: !1 },
-    colors: colors,
-    labels: ["2011", "2012", "2013", "2014", "2015", "2016"],
-};
-(chart = new ApexCharts(document.querySelector("#marketing-reports"), options)).render();
-var dataColors;
-colors = ["#39afd1", "#ffbc00", "#313a46", "#fa5c7c"];
-(dataColors = $("#projections-actuals").data("colors")) && (colors = dataColors.split(","));
-var chart;
-options = {
-    chart: { height: 312, type: "donut" },
-    series: [44, 55, 41, 17],
-    legend: { show: !0, position: "bottom", horizontalAlign: "center", verticalAlign: "middle", floating: !1, fontSize: "14px", offsetX: 0, offsetY: 7 },
-    labels: ["Direct", "Affilliate", "Sponsored", "E-mail"],
-    colors: colors,
-    responsive: [{ breakpoint: 600, options: { chart: { height: 240 }, legend: { show: !1 } } }],
-};
 (chart = new ApexCharts(document.querySelector("#projections-actuals"), options)).render(),
     $("#world-map-markers").vectorMap({
         map: "world_mill_en",
