@@ -106,6 +106,25 @@
 
     <div class="row">
 
+        <div class="col-xl-8">
+            <!-- Portlet card -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-widgets">
+                        <a href="javascript: void(0);" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
+                        <a data-bs-toggle="collapse" href="#cardCollpase3" role="button" aria-expanded="false" aria-controls="cardCollpase3"><i class="mdi mdi-minus"></i></a>
+                        <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
+                    </div>
+                    <h4 class="header-title mb-0">Gradient Line Chart</h4>
+
+                    <div id="cardCollpase3" class="collapse pt-3 show" dir="ltr">
+                        <div id="apex-line-2" class="apex-charts" data-colors="#f672a7"></div>
+                    </div> <!-- collapsed end -->
+                </div> <!-- end card-body -->
+            </div> <!-- end card-->
+        </div> <!-- end col-->
+
+        {#
         <div class="col-xl-4 col-lg-6">
             <div class="card">
                 <div class="card-body">
@@ -198,6 +217,7 @@
                 </div>
             </div> <!-- end card -->
         </div> <!-- end col -->
+        #}
 
         <div class="col-xl-4">
             <div class="card">
@@ -597,6 +617,19 @@
     <!-- Plugins js-->
     <script src="/source/base/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="/source/base/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+
+
+
+
+    <!-- Third Party js-->
+    <script src="https://apexcharts.com/samples/assets/irregular-data-series.js"></script>
+    <script src="https://apexcharts.com/samples/assets/ohlc.js"></script>
+
+    <!-- init js -->
+    <script src="/source/base/js/pages/apexcharts.init.js"></script>
+
+
+
 
     <!-- Dashboard init-->
     <script src="/source/base/js/pages/dashboard-sales.init.js"></script>
