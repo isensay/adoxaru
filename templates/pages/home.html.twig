@@ -4,15 +4,15 @@
 {% block head_title %}Home{% endblock %}
 
 {% block body %}
-<div class="row">
+<div class="row mt-3">
 
     {# Информация о системном диске #}
-    <div class="col-xl-3 col-md-6 mt-3">
+    <div class="col-xl-3 col-md-6">
         <div class="card fixed-height-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="knob-chart invisible" dir="ltr">
-                        {% set diskColor = (disk.used_percent > 70) ? '#f05050 ' : '#23b397' %}
+                        {% set diskColor = (disk.used_percent > 70) ? '#f05050' : '#23b397' %}
                         <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="{{ diskColor }}"
                             data-bgColor="#fbdee1" value="{{ disk.used_percent }}"
                             data-skin="tron" data-angleOffset="0" data-readOnly=true
@@ -28,12 +28,12 @@
     </div><!-- end col -->
 
     {# Информация о оперативной памяти #}
-    <div class="col-xl-3 col-md-6 mt-3">
+    <div class="col-xl-3 col-md-6">
         <div class="card fixed-height-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="knob-chart invisible" dir="ltr">
-                        {% set ramColor = (ram.used_percent > 70) ? '#f05050 ' : '#23b397' %}
+                        {% set ramColor = (ram.used_percent > 70) ? '#f05050' : '#23b397' %}
                         <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="{{ ramColor }}"
                             data-bgColor="#ebeff2" value="{{ ram.used_percent }}"
                             data-skin="tron" data-angleOffset="0" data-readOnly=true
@@ -49,7 +49,7 @@
     </div><!-- end col -->
 
     {# Информация о курсе валюты USD #}
-    <div class="col-xl-3 col-md-6 mt-3">
+    <div class="col-xl-3 col-md-6">
         <div class="card fixed-height-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
@@ -75,7 +75,7 @@
     </div><!-- end col -->
 
     {# Информация о курсе валюты EUR #}
-    <div class="col-xl-3 col-md-6 mt-3">
+    <div class="col-xl-3 col-md-6">
         <div class="card fixed-height-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
@@ -148,15 +148,12 @@
 {% block page_java_script %}
     <!-- KNOB JS -->
     <script src="/source/base/libs/jquery-knob/jquery.knob.min.js"></script>
+    
     <!-- Apex js-->
     <script src="/source/base/libs/apexcharts/apexcharts.min.js"></script>
 
-
-
     <!-- init js -->
     <script src="/source/base/js/pages/apexcharts.init.js?1"></script>
-
-
 {% endblock %}
 
 {% block page_more_style %}
