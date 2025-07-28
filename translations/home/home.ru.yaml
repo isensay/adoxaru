@@ -7,3 +7,4 @@ ram:
 exchange_rates:
   date: "сегодня"
   info: "по курсу ЦБ РФ"
+  val_name: "Курс"

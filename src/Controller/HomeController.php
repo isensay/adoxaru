@@ -8,6 +8,8 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\ExchangeRateRepository;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use App\Service\ExchangeRateService;
+use Symfony\Component\HttpFoundation\Request;
+use App\Entity\ExchangeRate;
 
 
 final class HomeController extends AbstractController
@@ -24,7 +26,7 @@ final class HomeController extends AbstractController
     }
 
     #[Route('/', name: 'app_home')]
-    public function index(ExchangeRateRepository $repository): Response
+    public function index(ExchangeRateRepository $repository, Request $request): Response
     {
         // Получение информации о курсах валют
         $rates = $this->exchangeRateService->getRates();
@@ -43,6 +45,43 @@ final class HomeController extends AbstractController
         $freeMem = round($matches[1] / (1024 * 1024)); // в ГБ
         $usedMem = $totalMem - $freeMem;
         $memUsagePercent = round(($usedMem / $totalMem) * 100);
+
+        // Получение курсов валюты USD/RUB
+        $ratesUsd = $repository->findBy(
+            ['type' => ExchangeRate::TYPE_USD],
+            ['date' => 'ASC']
+        );
+
+        // Получение курсов валюты UER/RUB
+        $ratesEur = $repository->findBy(
+            ['type' => ExchangeRate::TYPE_EUR],
+            ['date' => 'ASC']
+        );
+
+        // Преобразование данных для графика UER/RUB
+        $chartDataUsd = [
+            'series'      => implode(',', array_map(fn($rate) => (float)$rate->getValue(), $ratesUsd)),
+            'categories'  => implode(',', array_map(
+                fn($rate) => '"'.(new \DateTime())->setTimestamp($rate->getDate())->format('Y-m-d').'"',
+                $ratesUsd
+            ))
+        ];
+
+        // Преобразование данных для графика UER/RUB
+        $chartDataEur = [
+            'series'      => implode(',', array_map(fn($rate) => (float)$rate->getValue(), $ratesEur)),
+            'categories'  => implode(',', array_map(
+                fn($rate) => '"'.(new \DateTime())->setTimestamp($rate->getDate())->format('Y-m-d').'"',
+                $ratesEur
+            ))
+        ];
+
+        $chartLocale = [
+            'ru' => 'ru-RU',
+            'en' => 'en-RU',
+        ];
+
+        $locale  = $request->getLocale();
         
         return $this->render('pages/home.html.twig', [
             'disk' => [
@@ -52,6 +91,11 @@ final class HomeController extends AbstractController
             'ram' => [
                 'total'        => $totalMem,
                 'used_percent' => $memUsagePercent
+            ],
+            'chart' => [
+                'usd'       => $chartDataUsd,
+                'eur'       => $chartDataEur,
+                'locale'    => $chartLocale[$locale]
             ],
             'rates' => $rates
         ]);

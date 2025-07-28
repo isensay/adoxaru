@@ -20,16 +20,6 @@ class SecurityController extends AbstractController
     )]
     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
-        /*
-        $requestedLocale = $request->query->get('locale');
-
-        $locale = in_array($requestedLocale, $this->getParameter('app.supported_locales'))
-        ? $requestedLocale 
-        : $this->getParameter('kernel.default_locale');
-
-        $request->setLocale($locale);
-        */
-
         $localeCookie = $request->cookies->get('user_locale');
 
         $locale = in_array($localeCookie, $this->getParameter('app.supported_locales'))

@@ -7,3 +7,4 @@ ram:
 exchange_rates:
   date: "today"
   info: "CB RF exchange rate"
+  val_name: "Rate"

@@ -14,7 +14,7 @@
                     <div class="knob-chart invisible" dir="ltr">
                         {% set diskColor = (disk.used_percent > 70) ? '#f05050' : '#23b397' %}
                         <input data-plugin="knob" data-width="70" data-height="70" data-fgColor="{{ diskColor }}"
-                            data-bgColor="#fbdee1" value="{{ disk.used_percent }}"
+                            data-bgColor="#ebeff2" value="{{ disk.used_percent }}"
                             data-skin="tron" data-angleOffset="0" data-readOnly=true
                             data-thickness=".15"/>
                     </div>
@@ -151,6 +151,15 @@
     
     <!-- Apex js-->
     <script src="/source/base/libs/apexcharts/apexcharts.min.js"></script>
+
+    <script>
+    var chartValUsd  = [{{ chart.usd.series }}];
+    var chartCatUsd  = [{{ chart.usd.categories|raw }}];
+    var chartValEur  = [{{ chart.eur.series }}];
+    var chartCatEur  = [{{ chart.eur.categories|raw }}];
+    var chartLocale  = '{{ chart.locale }}';
+    var chartValName = '{{ 'exchange_rates.val_name'|trans({}, 'home') }}';
+    </script>
 
     <!-- init js -->
     <script src="/source/base/js/pages/apexcharts.init.js?1"></script>
