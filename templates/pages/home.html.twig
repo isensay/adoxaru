@@ -157,7 +157,7 @@
     var chartCatUsd  = [{{ chart.usd.categories|raw }}];
     var chartValEur  = [{{ chart.eur.series }}];
     var chartCatEur  = [{{ chart.eur.categories|raw }}];
-    var chartLocale  = '{{ chart.locale }}';
+    var chartLocale  = '{{ 'lang'|trans({}, 'global') }}';
     var chartValName = '{{ 'exchange_rates.val_name'|trans({}, 'home') }}';
     </script>
 

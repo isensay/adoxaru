@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\ExchangeRateRepository;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use App\Service\ExchangeRateService;
-use Symfony\Component\HttpFoundation\Request;
 use App\Entity\ExchangeRate;
 
 
@@ -26,7 +25,7 @@ final class HomeController extends AbstractController
     }
 
     #[Route('/', name: 'app_home')]
-    public function index(ExchangeRateRepository $repository, Request $request): Response
+    public function index(ExchangeRateRepository $repository): Response
     {
         // Получение информации о курсах валют
         $rates = $this->exchangeRateService->getRates();
@@ -75,13 +74,6 @@ final class HomeController extends AbstractController
                 $ratesEur
             ))
         ];
-
-        $chartLocale = [
-            'ru' => 'ru-RU',
-            'en' => 'en-RU',
-        ];
-
-        $locale  = $request->getLocale();
         
         return $this->render('pages/home.html.twig', [
             'disk' => [
@@ -94,8 +86,7 @@ final class HomeController extends AbstractController
             ],
             'chart' => [
                 'usd'       => $chartDataUsd,
-                'eur'       => $chartDataEur,
-                'locale'    => $chartLocale[$locale]
+                'eur'       => $chartDataEur
             ],
             'rates' => $rates
         ]);
