@@ -14,7 +14,7 @@ framework:
     #session: true
     session:
         #handler_id: 'redis://redis'
-        handler_id: 'redis://redis?retry_interval=5&timeout=10&read_write_timeout=5'
+        handler_id: 'redis://%env(REDIS_PASSWORD)%:@redis?retry_interval=5&timeout=10&read_write_timeout=5'
         enabled: true
 
         cookie_secure: auto
