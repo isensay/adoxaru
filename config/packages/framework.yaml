@@ -16,7 +16,7 @@ framework:
         #handler_id: 'redis://redis'
         handler_id: 'session.handler.redis'
         save_path: 'redis://redis:6379'
-        cookie_secure: false  # для HTTP
+        #cookie_secure: false  # для HTTP
         cookie_samesite: lax
         enabled: true
 
