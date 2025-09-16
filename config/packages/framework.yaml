@@ -18,7 +18,7 @@ framework:
         #save_path: 'redis://redis:6379'
         #cookie_secure: false  # для HTTP
         #cookie_samesite: lax
-        enabled: true
+        #enabled: true
 
         cookie_secure: auto
         cookie_samesite: lax
